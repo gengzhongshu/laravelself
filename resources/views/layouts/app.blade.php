@@ -71,8 +71,96 @@
             </div>
         </div>
     </nav>
+<div class="main-container container-fluid">
+        <div class="page-container con-basic" id="left_top">
 
-    @yield('content')
+            <div class=" con-sidebar">
+            <!--左边开始-->
+                <div class="left" id="left_up">
+
+                <ul class="expmenu help-center">
+                    <li>
+                        <div class="header none">
+                            <a>
+                                <i class="iconfont icon-guanli"></i>
+                                <span class="label" >器械包管理</span>
+                                <span class="arrow up"></span>
+                            </a>
+                        </div>
+                                <span class="no">
+                                    <ul class="menu" style="display:block;">
+<!--                                        <li class="on"><a href="/Hyproduct/operation/index"><i class="iconfont icon-shoushufenlei"></i>手术管理</a></li>-->
+<!--                                        <li><a href="/Hyproduct/operationcate/index"><i class="iconfont icon-moban"></i>手术类别管理</a></li>-->
+<!--                                        <li><a href="/Hyproduct/operationhistory/index"><i class="iconfont icon-moban"></i>手术记录管理</a></li>-->
+<!--                                        <li><a href="/Hyproduct/brand/index"><i class="iconfont icon-moban"></i>品牌管理</a></li>-->
+<!--                                        <li><a href="/Hyproduct/apparatussyscate/index"><i class="iconfont icon-moban"></i>系统类别管理</a></li>-->
+                                        <li><a href="/Hyproduct/apparatusinnercate/index"><i class="iconfont icon-moban"></i>内部类别管理</a></li>
+                                        <li><a href="/Hyproduct/apparatus/index"><i class="iconfont icon-guanli1"></i>器械字典管理</a></li>
+                                        <li><a href="/Hyproduct/apparatuscombo/index"><i class="iconfont icon-moban"></i>器械包模板</a></li>
+                                        <li><a href="/Hyproduct/Apparatuscombosearch/index"><i class="iconfont icon-moban"></i>器械包模板搜索</a></li>
+<!--                                        <li><a href="/Hyproduct/productcomboentity/instrumentpackage"><i class="iconfont icon-qixiebao"></i>新建器械包</a></li>-->
+                                        <li><a href="/Hyproduct/productcomboentity/index"><i class="iconfont icon-liebiao"></i>器械包列表</a></li>
+                                        <li><a href="/Hyproduct/apparatusallocationrule/index"><i class="iconfont icon-guizeguanli"></i>器械包分配规则</a></li>
+<!--                                        <li><a href="/Hyproduct/warehouse/index"><i class="iconfont icon-guizeguanli"></i>仓库管理</a></li>-->
+<!--                                        <li><a href="/Hyproduct/supplier/index"><i class="iconfont icon-guizeguanli"></i>供应商</a></li>-->
+<!--                                        <li><a href="/Hyproduct/manufacturer/index"><i class="iconfont icon-guizeguanli"></i>生产商列表</a></li>-->
+                                    </ul>
+                                </span>
+                    </li>
+                    <li>
+                        <div class="header">
+                            <a>
+                                <i class="iconfont icon-guanli"></i>
+                                <span class="label" >清洗锅管理</span>
+                                <span class="arrow up"></span>
+                            </a>
+                        </div>
+                                <span class="no">
+                                    <ul class="menu" style="display:block;">
+                                        <li><a href="/Hyproduct/cleanpot/index"><i class="iconfont icon-jichuxinxi"></i>基础信息</a></li>
+                                        <!--<li><a href="#"><i class="iconfont icon-iconlishijilu"></i>历史记录</a></li>-->
+                                    </ul>
+                                </span>
+                    </li>
+                    <li>
+                        <div class="header">
+                            <a>
+                                <i class="iconfont icon-guanli"></i>
+                                <span class="label" >灭菌锅管理</span>
+                                <span class="arrow up"></span>
+                            </a>
+                        </div>
+                                <span class="no">
+                                    <ul class="menu" style="display:block;">
+                                        <li><a href="/Hyproduct/disinfectpot/index"><i class="iconfont icon-jichuxinxi"></i>基础信息</a></li>
+                                        <!--<li><a href="#"><i class="iconfont icon-iconlishijilu"></i>历史记录</a></li>-->
+                                    </ul>
+                                </span>
+                    </li>
+                    <li>
+                        <div class="header">
+                            <a>
+                                <i class="iconfont icon-guanli"></i>
+                                <span class="label" >敷料包管理</span>
+                                <span class="arrow up"></span>
+                            </a>
+                        </div>
+                                <span class="no">
+                                    <ul class="menu" style="display:block;">
+                                        <li><a href="/Hyproduct/Dressingbagmanager/index"><i class="iconfont icon-jichuxinxi"></i>敷料包维护</a></li>
+                                        <!--<li><a href="#"><i class="iconfont icon-iconlishijilu"></i>历史记录</a></li>-->
+                                    </ul>
+                                </span>
+                    </li>
+                </ul>
+            </div><!--.page-sidebar end---左边列表-->
+            </div>
+            <div class="page-content con-matter">
+                    @yield('content')
+            </div>
+        </div>
+    </div>
+
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
