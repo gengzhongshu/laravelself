@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::auth();
 
@@ -22,3 +19,15 @@ Route::get('now', function(){
     return date("Y-m-d H:i:s");
 });
 Route::post('/home', 'HomeController@indexPost');
+Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
+    Route::get('/', 'CustomerController@index');
+    Route::get('/add', 'CustomerController@add');
+    Route::post('/save', 'CustomerController@save');
+});
+
+//Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
+//    Route::get('/', 'HomeController@index');
+//});
+//Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
+//    Route::get('/', 'HomeController@index');
+//});

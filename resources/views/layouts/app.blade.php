@@ -10,6 +10,8 @@
 <!-- Fonts -->
     <link rel="stylesheet"   href="{{ asset('assets/css/font-awesome.css') }}"  >
 
+    <link rel="stylesheet"   href="{{ asset('assets/iconfont/ux_1464852498_232132/demo.css') }}"  >
+    <link rel="stylesheet"   href="{{ asset('assets/iconfont/ux_1464852498_232132/iconfont.css') }}"  >
 {{--<link rel="stylesheet" href="http://fonts.useso.com/css?family=Lato:100,300,400,700">--}}
 
 <!-- Styles -->
@@ -154,10 +156,11 @@
                     </li>
                 </ul>
             </div><!--.page-sidebar end---左边列表-->
-            </div>
-            <div class="page-content con-matter">
+                <div class="page-content con-matter">
                     @yield('content')
+                </div>
             </div>
+
         </div>
     </div>
 

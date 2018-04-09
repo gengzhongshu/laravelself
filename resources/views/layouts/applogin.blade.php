@@ -8,12 +8,12 @@
     <title>{{ Config::get('constants.title_name')}} </title>
 
     <!-- Fonts -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" >
     <link rel="stylesheet"   href="{{ asset('assets/css/font-awesome.css') }}"  >
 
     {{--<link rel="stylesheet" href="http://fonts.useso.com/css?family=Lato:100,300,400,700">--}}
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" >
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <style>
