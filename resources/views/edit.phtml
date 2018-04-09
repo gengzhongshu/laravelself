@@ -1,0 +1,106 @@
+<style type="text/css">
+    .webuploader-pick
+    {
+        background: rgba(238, 0, 0, 0);
+        width: 100%;
+        height: 100%;
+    }
+
+</style>
+<div class="page-header headline">
+    <h1>器械管理</h1>
+</div><!--.headline end-->
+<div class="page-body ">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget-body">
+                <div id="horizontal-form">
+                    <form role="form" class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+                        <input type="hidden" id="id" name="id" value="<?= $innerCate["id"] ?>">
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right wid-8">类别名称</label>
+                            <div class="col-sm-7">
+                                <input type="text" placeholder="类别名称" class="form-control" id="cate_name" name="cate_name" value="<?= $innerCate['cate_name'] ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right wid-8">机构</label>
+                            <div class="col-sm-7">
+                                <!--<input type="text" placeholder="" class="form-control" name="parent_id" value="<?php//=  $innerCate['parent_id'] ?>">-->
+                                <select class="form-control" name="org_id">
+                                    <option value='0'>--</option>
+                                    <option value='1'>医院</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right wid-8">父类别</label>
+                            <div class="col-sm-7">
+                                <!--<input type="text" placeholder="" class="form-control" name="parent_id" value="<?php//=  $innerCate['parent_id'] ?>">-->
+                                <select style="width:100%;" name="parent_id" id="parent_id">
+                                    <option value='0'>--</option>
+                                    <?php 
+                                    foreach ($parentCates as $key => $value) {
+                                        $isSelected = $innerCate['parent_id'] == $value['id'] ? 'selected' : '';
+                                        echo '<option value="'.$value['id'].'" '.$isSelected.'>'.$value['cate_name'].'</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right wid-8">排列次序</label>
+                            <div class="col-sm-7">
+                                <input type="text" placeholder="" class="form-control" name="sort_order" value="<?=  $innerCate['sort_order'] ?>">
+                            </div>
+                        </div>
+                    </form>
+                </div><!--.horizontal-form end-->
+            </div>
+            <div class="form-group btn-next text-right no-padding-right distance-top_15">
+
+                <button class="btn btn-lg active next" type="button" onclick="save()">完成</button>
+            </div>
+        </div><!--.col-md-12 end-->
+
+    </div><!--.row end-->
+</div><!--.page-body end-->
+<script type="text/javascript">
+    $("#parent_id").select2();
+
+    function save(argument) {
+        var cateName = $("#cate_name").val();
+        if (!cateName) {
+            alert('请输入类别名称!');
+            return;
+        }
+        var postData = $('form').serializeArray();
+        
+
+        $.ajax({
+                method: 'POST',
+                asyc: false,
+                url: '/Hyproduct/apparatusinnercate/save',
+                dataType: 'JSON',
+                data: postData
+            })
+            .success(function (res) {
+                if (res.code == 200) {
+                    location.href = "/Hyproduct/apparatusinnercate/index";
+                }
+                else {
+                    alert(res.message);
+                }
+                console.log(res.responseText);
+            })
+            .fail(function (res) {
+                console.log(res.responseText);
+            })
+        // .complete(function (res) {
+        //     console.log(res);
+        // })
+        ;
+    }
+
+</script>
