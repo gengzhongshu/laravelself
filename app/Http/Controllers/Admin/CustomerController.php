@@ -4,18 +4,21 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Database\Eloquent\Model;
-
-
+use App\Models\Customer;
+use DB;
 class CustomerController extends Controller
 {
 
     //  客户列表首页
     public function index()
     {
-        echo '111';die;
+
+        $users = DB::table('Customer')->paginate(15);
+        var_dump($users);die;
+        return view('admin/customer/add',['users' => $users]);
+
+
     }
 
     // 添加客户
@@ -27,16 +30,16 @@ class CustomerController extends Controller
 
     public function  save( Request $request){
 
-
         $this->validate($request, [
             'name' => 'required',
             'phone' => 'required',
         ]);
-        $Customer = new Customer;
-        $Customer->name = $request->post('name');
-        $Customer->phone = $request->post('phone');
+        $customerArr['name'] = $request->get('name');
+        $customerArr['phone'] = $request->get('phone');
+        $status = Customer::saveparams($customerArr);
+
 //        $Customer->user_id = $request->user()->id;
-        if($Customer->save()){
+        if($status){
             return redirect('/admin');
         }else{
             return redirect()->back()->withInput()->withErrors('保存失败！');
