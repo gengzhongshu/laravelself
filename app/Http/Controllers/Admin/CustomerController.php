@@ -15,8 +15,8 @@ class CustomerController extends Controller
     {
 
         $users = DB::table('Customer')->paginate(15);
-        var_dump($users);die;
-        return view('admin/customer/add',['users' => $users]);
+
+        return view('admin.customer.index',['users' => $users]);
 
 
     }

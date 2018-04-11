@@ -1,0 +1,78 @@
+@charset "utf-8";
+/*address, cite, dfn, em, var {
+    font-style: normal;
+}
+code, kbd, pre, samp {
+    font-family: courier new,courier,monospace;
+}
+small {
+    font-size: 12px;
+}
+ul, ol {
+    list-style: outside none none;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+legend {
+    color: #000;
+}
+fieldset, img {
+    border: 0 none;
+}
+button, input, select, textarea {
+    font-size: 100%;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+*/
+.ks-clear::after, .clear::after {
+    clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+}
+.ks-clear, .clear {
+}
+.main {
+    padding: 30px 100px;
+}
+.main h1 {
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+.helps {
+    margin-top: 40px;
+}
+.helps pre {
+    background-color: #fffdef;
+    border: 1px solid #e7e1cd;
+    margin: 10px 0;
+    overflow: auto;
+    padding: 20px;
+}
+.icon_lists li {
+    float: left;
+    height: 180px;
+    text-align: center;
+    width: 100px;
+}
+.icon_lists .icon {
+    color: #333;
+    font-size: 42px;
+    line-height: 100px;
+    margin: 10px 0;
+    transition: font-size 0.25s ease-out 0s;
+}
+.icon_lists .icon:hover {
+    font-size: 100px;
+}
+
