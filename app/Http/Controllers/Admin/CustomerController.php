@@ -11,13 +11,17 @@ class CustomerController extends Controller
 {
 
     //  客户列表首页
-    public function index()
+    public function index(Request $request)
     {
-
-        $users = DB::table('Customer')->paginate(15);
-        var_dump($users);die;
-        return view('admin/customer/add',['users' => $users]);
-
+        $params = [];
+        if ($request->get('name')){
+            $params['name'] = $request->get('name');
+        }
+        if($request->get('phone')){
+            $params['phone'] = $request->get('phone');
+        }
+        $customer = Customer::getpagingparams($request);
+        return view('admin/customer/index', ['customer'=> $customer]);
 
     }
 
