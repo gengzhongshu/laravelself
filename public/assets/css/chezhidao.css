@@ -3,25 +3,8 @@ body,h1,p,form,ul,li,dl,dd,input,h2,h3,th,td,table,tr,td,tbody,thead{margin:0;pa
 /*a{text-decoration:none; outline:none; cursor:pointer;color:#222}*/
 a:hover{text-decoration:none;color:#222}
 li{list-style:none}
-
-.con-sidebar{width:190px;position:absolute;top:0;left:0;background:#fff;overflow:hidden;zoom:1;height:100%}
-.menu a{color:#222;font-size:14px;text-decoration:none;outline:none;cursor:pointer;text-align:left}
-.menu .no {display:none;}
-.main-container > .page-container{border:#d9dadc 1px solid;min-height:750px;background:#fff;margin-bottom:15px;}
-.navbar .navbar-inner .navbar-header .navbar-account{height:50px}
-.navbar .navbar-inner .navbar-header .navbar-account .account-area .login-area .avatar{border:none;margin-right:10px;margin-top:7px}
-.navbar .navbar-inner .navbar-header .navbar-account .account-area .login-area section h2 span{color:#00b4ff;font-size:15px;margin-top:4px}
-.navbar .navbar-inner .navbar-header .navbar-account .account-area .login-area{background:#e9e9e9;height:100%;}
-.navbar .navbar-inner .navbar-header .navbar-account .account-area > li{margin-left:10px;height:55px}
-.navbar .navbar-inner .navbar-header .navbar-account .account-area > li .dropdown-arrow::before{position:absolute;right:0;top:-56px}
-.navbar .navbar-inner .navbar-header .navbar-account .account-area > li > a.wave.in::after {animation: 5s linear 3s normal none infinite running wave;background-clip: padding-box;background-image: radial-gradient(circle farthest-side at center center , rgba(26, 175, 93, 0) 70%, #f5f5f5 100%);border: 1px solid #00b4ff  ;border-radius: 50%;box-sizing: border-box;content: "";height: 40px;left: 3px;opacity: 0;position: absolute;top: 7px;width: 40px;}
-.navbar .navbar-inner .navbar-header .navbar-account .account-area > li.open > a{background:#e9e9e9}
-.navbar .navbar-inner .navbar-header .navbar-account .account-area > li .dropdown-menu.dropdown-login-area > li.dropdown-footer{border:none;background:#fff;height:35px;line-height:35px;color:#222;font-size:14px;padding:0}
-.navbar .navbar-inner .navbar-header .navbar-account .account-area > li .dropdown-menu.dropdown-login-area > li.dropdown-footer:hover{background:#d6f3ff}
-.navbar .navbar-brand{padding:15px;color:#00b4ff;font-size:24px;font-weight:bold;height: 55px}
-.navbar .navbar-inner .navbar-header .navbar-account .account-area > li .dropdown-menu.dropdown-login-area > li.dropdown-footer a{display: block;width:100%;height:35px;line-height:35px;color:#222;font-size:14px;text-align: left;}
-.navbar .navbar-inner .navbar-header .navbar-account .account-area > li .dropdown-menu.dropdown-login-area > li.dropdown-footer a:hover{background:#d6f3ff}
-
+a,a:focus,.btn,.btn:focus,.btn.active,.btn:active,.btn.active:focus,.btn:active:focus{outline:none;outline-offset:0;text-decoration:none;border:none}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"]{ border-radius: 5px !important;}
 ul.expmenu{width:190px;margin:0 auto;position:relative;z-index:99;overflow:hidden;zoom:1;border-right:#d9dadc 1px solid;border-bottom:#d9dadc 1px solid}
 ul.expmenu li div.header{border-bottom:1px #e7e7eb solid;border-top:1px #e7e7eb solid;border-left:#fff 3px solid}
 ul.expmenu li div.header:first-child{border-top:none}
@@ -48,14 +31,62 @@ ul.expmenu li .on .iconfont{color:#ff7e5b;opacity:1}
 ul.expmenu li .on:hover{border-left:#ff7e5b 3px solid;background:#f4f5f9;}
 ul.expmenu li .on:hover .iconfont{color:#ff7e5b}
 ul.expmenu li .iconfont{color:#d9dadc;font-size:20px;margin-left:13px;margin-right:20px; vertical-align:middle;font-weight:100;opacity:0}/*左侧导航*/
-.page-content{margin-left:190px}
+.addition{color:#fff}/*加提示的按钮*/
+.btn:active, .btn.active{box-shadow:none;}
+.btn-lg{padding:0;width:100px;text-align:center;height:30px;line-height:30px;font-size:14px;color:#fff}
+.btn-lg:hover, .btn-group-lg:hover > {color:#fff}
+.btn-blues:active, .btn-blues.active{background:#00b4ff;color:#fff}
+.btn-sm{padding:0;width:70px;text-align:center;height:30px;line-height:30px;font-size:14px;color:#fff}
+.btn-orange:active, .btn-orange.active{background:#ff6d55;color:#fff}
+.btn-orange:hover, .btn-orange.hover{background:#d21e00;color:#fff}
+.btn-orange-bor:active, .btn-orange-bor.active{border:#ff5a00 1px solid;color:#ff5a00;line-height:29px;}
+.btn-orange-bor:hover, .btn-orange-bor.hover,.btn-orange-bor:focus{background:#ff5a00;color:#fff}
+.btn-orange-bor-current:active,.btn-orange-bor-current.active,.btn-orange-bor-current:hover,.btn-orange-bor-current.hover{background:#ff5a00;color:#fff}
+
 .con-matter{display:block/*;margin-left:205px*/;min-height:1000px;background:#fff}
-/*大标题*/
+.con-sidebar{width:190px;position:absolute;top:0;left:0;background:#fff;overflow:hidden;zoom:1;height:100%}
+
+.form-horizontal{margin:15px 10px}
+.form-horizontal .control-label{color:#222222;font-size:14px;font-weight:100;text-align:left;margin-left:5px;}
+
+.page-body{background:#fff}
+.page-con { padding-top: 4px;}
 .headline{margin:0;border-bottom:#d9dadc 1px solid;height:45px;line-height:45px;background:#f4f5f9}
 .headline h1{font-weight:100;color:#222222;font-size:14px;height:45px;line-height:45px;padding-left:10px;}
+
+.menu a{color:#222;font-size:14px;text-decoration:none;outline:none;cursor:pointer;text-align:left}
+.menu .no {display:none;}
+.main-container > .page-container{border:#d9dadc 1px solid;min-height:750px;background:#fff;margin-bottom:15px;}
+.navbar .navbar-inner .navbar-header .navbar-account{height:50px}
+.navbar .navbar-inner .navbar-header .navbar-account .account-area .login-area .avatar{border:none;margin-right:10px;margin-top:7px}
+.navbar .navbar-inner .navbar-header .navbar-account .account-area .login-area section h2 span{color:#00b4ff;font-size:15px;margin-top:4px}
+.navbar .navbar-inner .navbar-header .navbar-account .account-area .login-area{background:#e9e9e9;height:100%;}
+.navbar .navbar-inner .navbar-header .navbar-account .account-area > li{margin-left:10px;height:55px}
+.navbar .navbar-inner .navbar-header .navbar-account .account-area > li .dropdown-arrow::before{position:absolute;right:0;top:-56px}
+.navbar .navbar-inner .navbar-header .navbar-account .account-area > li > a.wave.in::after {animation: 5s linear 3s normal none infinite running wave;background-clip: padding-box;background-image: radial-gradient(circle farthest-side at center center , rgba(26, 175, 93, 0) 70%, #f5f5f5 100%);border: 1px solid #00b4ff  ;border-radius: 50%;box-sizing: border-box;content: "";height: 40px;left: 3px;opacity: 0;position: absolute;top: 7px;width: 40px;}
+.navbar .navbar-inner .navbar-header .navbar-account .account-area > li.open > a{background:#e9e9e9}
+.navbar .navbar-inner .navbar-header .navbar-account .account-area > li .dropdown-menu.dropdown-login-area > li.dropdown-footer{border:none;background:#fff;height:35px;line-height:35px;color:#222;font-size:14px;padding:0}
+.navbar .navbar-inner .navbar-header .navbar-account .account-area > li .dropdown-menu.dropdown-login-area > li.dropdown-footer:hover{background:#d6f3ff}
+.navbar .navbar-brand{padding:15px;color:#00b4ff;font-size:24px;font-weight:bold;height: 55px}
+.navbar .navbar-inner .navbar-header .navbar-account .account-area > li .dropdown-menu.dropdown-login-area > li.dropdown-footer a{display: block;width:100%;height:35px;line-height:35px;color:#222;font-size:14px;text-align: left;}
+.navbar .navbar-inner .navbar-header .navbar-account .account-area > li .dropdown-menu.dropdown-login-area > li.dropdown-footer a:hover{background:#d6f3ff}
+.new{display:inline}
+.new-img{float:left;background:url(../img/3.png) no-repeat center;width:10px;height:10px;margin-top:10px;margin-left:10px;margin-right:0;margin-right:-10px}
+
+.page-content{margin-left:190px}
+/*分页*/
+.pagination{margin:15px 0}
+
+
+/*大标题*/
 /*小标题*/
 .widget-header > .widget-caption{font-size: 14px;font-weight: 400 !important;color:#666}
-.page-body{background:#fff}
-.widget-body{box-shadow:none;border:#ddd 1px solid;padding:0;background:#fff;overflow:hidden;zoom:1}
 
+.widget-body{box-shadow:none;border:#ddd 1px solid;padding:0;background:#fff;overflow:hidden;zoom:1}
+.wid-auto{width:auto}
+
+
+.widget-header{box-shadow:none;padding-left:0;padding-bottom:7px;border-bottom:none}
+.widget-body{box-shadow:none;border:#ddd 1px solid;padding:0;background:#fff;overflow:hidden;zoom:1}
+.widget-header > .widget-caption{font-size: 14px;font-weight: 400 !important;color:#666}
 

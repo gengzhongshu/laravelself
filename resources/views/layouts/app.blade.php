@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="_token" content="{{ csrf_token() }}"/>
 
     <title>{{ Config::get('constants.title_name')}}</title>
     <!-- Fonts -->
@@ -13,10 +14,13 @@
     <link rel="stylesheet"   href="{{ asset('assets/iconfont/ux_1464852498_232132/iconfont.css') }}"  >
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" >
 
+    <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" media="screen"   />
     <link href="{{ asset('assets/css/beyond.min.css') }}"  rel="stylesheet" type="text/css" media="screen"   />
     <link rel="stylesheet"   href="{{ asset('assets/css/chezhidao.css') }}"  >
 
 
+    <script src="{{ asset('assets/js/jquery2.2.3.min.js') }}" ></script>
+    <script src="{{ asset('assets/js/bootstrap3.3.6.min.js') }}" ></script>
 {{--<link rel="stylesheet" href="http://fonts.useso.com/css?family=Lato:100,300,400,700">--}}
 
 <!-- Styles -->
@@ -115,8 +119,6 @@
 
 
     <!-- JavaScripts -->
-    <script src="{{ asset('assets/js/jquery2.2.3.min.js') }}" ></script>
-    <script src="{{ asset('assets/js/bootstrap3.3.6.min.js') }}" ></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

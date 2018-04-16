@@ -22,6 +22,7 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
     Route::get('/', 'CustomerController@index');
     Route::get('/add', 'CustomerController@add');
     Route::post('/save', 'CustomerController@save');
+    Route::post('/delete', 'CustomerController@delete');
 });
 
 //Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {

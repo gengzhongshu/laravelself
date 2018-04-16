@@ -11,10 +11,6 @@ class Customer extends Model
     protected $table = 'customer';
     protected $fillable=['card','user_id','name','bankName','province','city','branch'];
 
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
-
 
     public static function saved($callback, $priority = 0)
     {
@@ -32,10 +28,8 @@ class Customer extends Model
         if(isset($params->phone) && $params->phone ){
             $where->where('phone','=',$params['phone']);
         }
-        $Customer = $where->paginate(3);
+        $Customer = $where->paginate(15);
         if(count($Customer) && $Customer){
-            $Customer->name = $params->name;
-            $Customer->phone = $params->phone;
             return $Customer;
         }else{
             return [];

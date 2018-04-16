@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use DB;
+use PhpParser\Node\Expr\Cast\Object_;
+
 class CustomerController extends Controller
 {
 
@@ -14,14 +16,20 @@ class CustomerController extends Controller
     public function index(Request $request)
     {
         $params = [];
+        $oara = [];
         if ($request->get('name')){
             $params['name'] = $request->get('name');
+        }else{
+            $params['name'] = '';
+
         }
         if($request->get('phone')){
             $params['phone'] = $request->get('phone');
+        }else{
+            $params['phone'] = '';
         }
         $customer = Customer::getpagingparams($request);
-        return view('admin/customer/index', ['customer'=> $customer]);
+        return view('admin/customer/index', ['customer'=> $customer,'params'=>$params]);
 
     }
 
@@ -48,8 +56,11 @@ class CustomerController extends Controller
         }else{
             return redirect()->back()->withInput()->withErrors('保存失败！');
         }
-
-
+    }
+    public function delete ( Request $request){
+//        Customer::find()->delete();
+        $user_id = $request->get('id');
+        Customer::find($user_id)->delete();
 
     }
 }
