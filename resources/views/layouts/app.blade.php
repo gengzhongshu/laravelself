@@ -21,6 +21,7 @@
 
     <script src="{{ asset('assets/js/jquery2.2.3.min.js') }}" ></script>
     <script src="{{ asset('assets/js/bootstrap3.3.6.min.js') }}" ></script>
+    <script src="{{ asset('assets/js/layer/layer.js') }}" ></script>
 {{--<link rel="stylesheet" href="http://fonts.useso.com/css?family=Lato:100,300,400,700">--}}
 
 <!-- Styles -->

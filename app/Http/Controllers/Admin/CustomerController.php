@@ -60,7 +60,13 @@ class CustomerController extends Controller
     public function delete ( Request $request){
 //        Customer::find()->delete();
         $user_id = $request->get('id');
-        Customer::find($user_id)->delete();
+        $Customer = Customer::find($user_id);
+        if($Customer->delete()){
+            $status = 200;
+        }else{
+            $status = 500;
+        }
+        return response()->json(['status'=>$status]);
 
     }
 }

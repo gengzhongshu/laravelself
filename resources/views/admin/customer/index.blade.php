@@ -52,7 +52,7 @@
                         </thead>
                         <tbody>
                             @foreach ($customer as $val)
-                                <tr data-id="182">
+                                <tr id="customer{{$val->id}}" >
                                     <td>{{$val->id}}</td>
                                     <td colspan="1">{{$val->name}}</td>
                                     <td>{{$val->phone}}</td>
@@ -81,17 +81,29 @@
 $('.delete').click(function(){
     $id  = $(this).data('id');
     // ajax 删除
-    $.ajax({
-        type: 'POST',
-        url: '/admin/delete',
-        data: { id : $id},
-        dataType: 'json',
-        headers: {
-        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-    }, success: function(data){
-            console.log(data.status);
+    layer.confirm('您确定要删除当前顾客么？', {
+      btn: ['确定','取消'] //按钮
+    }, function(){
+        layer.load(1);
+        $.ajax({
+            type: 'POST',
+            url: '/admin/delete',
+            data: { id : $id},
+            dataType: 'json',
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+        }, success: function(data){
+            if(data.status ==200){
+                layer.alert('删除成功');
+                location.href.reload();
+//                $('#customer'+$id).remove();
+            }else{
+                layer.alert('删除失败');
+            }
         }
+        });
     });
+
 
 })
 </script>
