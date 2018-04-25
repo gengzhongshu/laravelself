@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use DB;
+
 
 class Customer extends Model
 {
@@ -23,10 +25,10 @@ class Customer extends Model
         //搜索条件判断
         $where = $Customer;
         if(isset( $params->name) &&  $params->name ){
-            $where->where('name','like',"%".$params['name']."%");
+            $where = $where->where('name','like',"%".$params['name']."%");
         }
         if(isset($params->phone) && $params->phone ){
-            $where->where('phone','=',$params['phone']);
+            $where = $where->where('phone','=',$params['phone']);
         }
         $Customer = $where->paginate(15);
         if(count($Customer) && $Customer){
@@ -46,7 +48,25 @@ class Customer extends Model
             return true;
         }else{
             return false;
-        };
+        }
+    }
+    public static function getinfobyparams($params){
+
+        $Customer = new Customer;
+        $where = $Customer;
+
+        if(isset($params['id']) && $params['id']){
+            $where = $where->where('id','=',$params['id']);
+        }
+        if(isset($params['phone']) && $params['phone']){
+            $where = $where->where('phone','=',$params['phone']);
+        }
+        $row = $where->first();
+        if (count($row) && $row){
+            return $row;
+        }else{
+            return [];
+        }
 
     }
 }

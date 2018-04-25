@@ -10,8 +10,8 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="/assets/css/font_1456814052_3924046.css" />
     <link rel="stylesheet" href="/assets/css/font_1458786779_2735257.css" />
-    <link rel="stylesheet"   href="{{ asset('assets/iconfont/ux_1464852498_232132/demo.css') }}"  >
-    <link rel="stylesheet"   href="{{ asset('assets/iconfont/ux_1464852498_232132/iconfont.css') }}"  >
+    <link rel="stylesheet"   href="{{ asset('assets/iconfont/font_ppls8pzqvenopqfr/iconfont.css') }}"  >
+{{--    <link rel="stylesheet"   href="{{ asset('assets/iconfont/ux_1464852498_232132/iconfont.css') }}"  >--}}
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" >
 
     <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" media="screen"   />

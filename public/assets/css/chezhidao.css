@@ -36,6 +36,7 @@ ul.expmenu li .iconfont{color:#d9dadc;font-size:20px;margin-left:13px;margin-rig
 .btn-lg{padding:0;width:100px;text-align:center;height:30px;line-height:30px;font-size:14px;color:#fff}
 .btn-lg:hover, .btn-group-lg:hover > {color:#fff}
 .btn-blues:active, .btn-blues.active{background:#00b4ff;color:#fff}
+.btn-blues:hover, .btn-blues.hover{background:#008cc6;color:#fff}
 .btn-sm{padding:0;width:70px;text-align:center;height:30px;line-height:30px;font-size:14px;color:#fff}
 .btn-orange:active, .btn-orange.active{background:#ff6d55;color:#fff}
 .btn-orange:hover, .btn-orange.hover{background:#d21e00;color:#fff}

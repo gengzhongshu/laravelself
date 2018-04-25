@@ -51,20 +51,27 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @if(count($customer))
                             @foreach ($customer as $val)
                                 <tr id="customer{{$val->id}}" >
                                     <td>{{$val->id}}</td>
                                     <td colspan="1">{{$val->name}}</td>
                                     <td>{{$val->phone}}</td>
-                                    <td>{{ $val->created_at ?date('Y-m-d',$val->created_at) :''}}</td>
+                                    <td>{{ $val->created_at}}</td>
                                     <td>
-                                        <a class=" edit popup-edit" style="width: 20px;" href="/Hyproduct/apparatusinnercate/edit?id=182" title="添加车辆信息"><i class="new-img"></i> </a>
-                                        <a class=" edit popup-edit" href="/Hyproduct/apparatusinnercate/edit?id=182" title="编辑"><i class="iconfont icon-bianji"></i> </a>
-                                        <a class="delete popup-delete"  data-id="{{$val->id}}" title="删除"><i class="iconfont icon-shanchu"></i></a>
+                                        <a class=" edit popup-edit" style="width: 20px;" href="/admin/add?id={{$val->id}}" title="添加车辆信息"><i class="iconfont icon-add"></i></a>
+                                        <a class=" edit popup-edit" href="/adminadd?id={{$val->id}}" title="编辑"><i class="iconfont icon-edit"></i> </a>
+                                        <a class="delete popup-delete"  data-id="{{$val->id}}" title="删除"><i class="iconfont icon-delete"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
-                           </tbody>
+                        @else
+                            <tr >
+                                <td colspan="5">暂无数据!</td>
+                            </tr>
+                        @endif
+
+                        </tbody>
                     </table><!--display-none-->
                 </div><!--.widget-body end-->
                 <!--分页-->

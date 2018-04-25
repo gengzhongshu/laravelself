@@ -35,9 +35,14 @@ class CustomerController extends Controller
 
     // 添加客户
 
-    public function add()
+    public function add(Request $request)
     {
-        return view('admin/customer/add');
+        $result = [];
+        if($request->get('id')){
+            $params['id'] = $request->get('id');
+            $result = Customer::getinfobyparams($params);
+        }
+        return view('admin/customer/add',['result'=>$result]);
     }
 
     public function  save( Request $request){
@@ -67,6 +72,20 @@ class CustomerController extends Controller
             $status = 500;
         }
         return response()->json(['status'=>$status]);
+    }
+
+
+    // 判断电话是否存在
+    public function isexistphone(Request $request){
+        $phone = $request->get('phone');
+        $result = Customer::getinfobyparams(['phone'=>$phone]);
+        if($result){
+            $status = 200;
+        }else{
+            $status = 500;
+        }
+        return response()->json(['status'=>$status]);
+
 
     }
 }
