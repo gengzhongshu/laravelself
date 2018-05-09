@@ -11,7 +11,7 @@ class Customer extends Model
 {
     //
     protected $table = 'customer';
-    protected $fillable=['card','user_id','name','bankName','province','city','branch'];
+    protected $fillable=['phone','name','bankName','province','city','branch'];
 
 
     public static function saved($callback, $priority = 0)
@@ -67,6 +67,8 @@ class Customer extends Model
         }else{
             return [];
         }
+    }
+
+
 
     }
-}

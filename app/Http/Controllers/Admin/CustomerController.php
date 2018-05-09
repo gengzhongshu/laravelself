@@ -51,16 +51,21 @@ class CustomerController extends Controller
             'name' => 'required',
             'phone' => 'required',
         ]);
+        $id = $request->get('id');
         $customerArr['name'] = $request->get('name');
-        $customerArr['phone'] = $request->get('phone');
-        $status = Customer::saveparams($customerArr);
-
-//        $Customer->user_id = $request->user()->id;
-        if($status){
-            return redirect('/admin');
+        $customerArr['phone'] =$request->get('phone');
+        if(isset($id) && $id){
+            $customer = Customer::find($id);
+            $customer->update($customerArr);
+            if($customer->update($customerArr)){
+                $status = 1;
+            }else{
+                $status = 0;
+            }
         }else{
-            return redirect()->back()->withInput()->withErrors('保存失败！');
+            $status = Customer::saveparams($customerArr);
         }
+        return response()->json(['status'=>$status]);
     }
     public function delete ( Request $request){
 //        Customer::find()->delete();

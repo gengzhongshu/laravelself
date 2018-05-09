@@ -46,6 +46,7 @@ ul.expmenu li .iconfont{color:#d9dadc;font-size:20px;margin-left:13px;margin-rig
 
 .con-matter{display:block/*;margin-left:205px*/;min-height:1000px;background:#fff}
 .con-sidebar{width:190px;position:absolute;top:0;left:0;background:#fff;overflow:hidden;zoom:1;height:100%}
+.distance-top_15{margin-top:15px}
 
 .form-horizontal{margin:15px 10px}
 .form-horizontal .control-label{color:#222222;font-size:14px;font-weight:100;text-align:left;margin-left:5px;}

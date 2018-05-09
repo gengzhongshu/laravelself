@@ -23,6 +23,7 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
     Route::get('/add', 'CustomerController@add');
     Route::post('/save', 'CustomerController@save');
     Route::post('/delete', 'CustomerController@delete');
+    Route::post('/isexistphone', 'CustomerController@isexistphone');
 });
 
 //Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {

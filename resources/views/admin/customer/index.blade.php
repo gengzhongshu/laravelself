@@ -60,7 +60,7 @@
                                     <td>{{ $val->created_at}}</td>
                                     <td>
                                         <a class=" edit popup-edit" style="width: 20px;" href="/admin/add?id={{$val->id}}" title="添加车辆信息"><i class="iconfont icon-add"></i></a>
-                                        <a class=" edit popup-edit" href="/adminadd?id={{$val->id}}" title="编辑"><i class="iconfont icon-edit"></i> </a>
+                                        <a class=" edit popup-edit" href="/admin/add?id={{$val->id}}" title="编辑"><i class="iconfont icon-edit"></i> </a>
                                         <a class="delete popup-delete"  data-id="{{$val->id}}" title="删除"><i class="iconfont icon-delete"></i></a>
                                     </td>
                                 </tr>
