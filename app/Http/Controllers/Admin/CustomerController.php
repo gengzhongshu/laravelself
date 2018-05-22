@@ -16,7 +16,6 @@ class CustomerController extends Controller
     public function index(Request $request)
     {
         $params = [];
-        $oara = [];
         if ($request->get('name')){
             $params['name'] = $request->get('name');
         }else{
@@ -90,7 +89,7 @@ class CustomerController extends Controller
             $status = 500;
         }
         return response()->json(['status'=>$status]);
-
-
     }
+
+
 }

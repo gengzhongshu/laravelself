@@ -68,6 +68,16 @@ class Customer extends Model
             return [];
         }
     }
+//    //获取所有的顾客信息
+//    public static function  getAllinfo(){
+//        $Customer = new Customer;
+//        $arr = $Customer::all();
+//        if(count($arr)&& $arr){
+//            return $arr;
+//        }else{
+//            return [];
+//        }
+//    }
 
 
 

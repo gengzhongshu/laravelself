@@ -13,7 +13,7 @@
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 Route::get('now', function(){
     return date("Y-m-d H:i:s");
 });
@@ -24,7 +24,9 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
     Route::post('/save', 'CustomerController@save');
     Route::post('/delete', 'CustomerController@delete');
     Route::post('/isexistphone', 'CustomerController@isexistphone');
+    Route::get('/carindex', 'CarController@index');
 });
+
 
 //Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
 //    Route::get('/', 'HomeController@index');
