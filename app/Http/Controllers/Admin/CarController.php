@@ -8,16 +8,19 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Car;
 use App\Models\Customer;
+use DB;
+
 
 class CarController extends Controller
 {
     public function __construct()
     {
-        $this->customer = Customer::all();
     }
 
     //
     public function index(Request $request){
+//        DB::enableQueryLog();
+//        dd(DB::getQueryLog());die;
         $params = [];
         if ($request->get('car_name')){
             $params['car_name'] = $request->get('car_name');
@@ -29,10 +32,17 @@ class CarController extends Controller
         }else{
             $params['bar_code'] = '';
         }
-
+        if($request->get('customer_id')){
+            $params['customer_id'] = $request->get('customer_id');
+        }
         $car = Car::getpagingparams($request);
-        return view('admin/car/index', ['car'=> $car,'params'=>$params,'customer' =>$this->customer]);
+        $customer = customer::all();
+        return view('admin/car/index', ['customer'=>$customer,'car'=>$car,'params'=>$params]);
+
+
     }
+
+
 
     // 添加客户
 

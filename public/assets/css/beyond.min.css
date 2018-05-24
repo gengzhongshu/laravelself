@@ -13427,7 +13427,7 @@ input[type=checkbox].checkbox-slider.colored-maroon.toggle+.text:after {
 	margin: 0;
 	padding-left: 4px;
 	padding-right: 4px;
-	position: relative;
+	/*position: relative;*/
 	z-index: 10000;
 	white-space: nowrap
 }
@@ -13461,7 +13461,7 @@ input[type=checkbox].checkbox-slider.colored-maroon.toggle+.text:after {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	position: absolute;
-	content: "";
+	/*content: "";*/
 	top: 25%;
 	right: 10px;
 	color: #737373!important

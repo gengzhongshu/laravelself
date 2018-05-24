@@ -12,16 +12,19 @@
     <link rel="stylesheet" href="/assets/css/font_1458786779_2735257.css" />
     <link rel="stylesheet"   href="{{ asset('assets/iconfont/font_ppls8pzqvenopqfr/iconfont.css') }}"  >
 {{--    <link rel="stylesheet"   href="{{ asset('assets/iconfont/ux_1464852498_232132/iconfont.css') }}"  >--}}
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" >
 
     <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" media="screen"   />
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" >
+    <link href="{{ asset('assets/css/select2.css') }}" rel="stylesheet" type="text/css" media="screen"   />
     <link href="{{ asset('assets/css/beyond.min.css') }}"  rel="stylesheet" type="text/css" media="screen"   />
+
     <link rel="stylesheet"   href="{{ asset('assets/css/chezhidao.css') }}"  >
 
 
     <script src="{{ asset('assets/js/jquery2.2.3.min.js') }}" ></script>
     <script src="{{ asset('assets/js/bootstrap3.3.6.min.js') }}" ></script>
     <script src="{{ asset('assets/js/layer/layer.js') }}" ></script>
+    <script src="{{ asset('assets/js/select2/select2.js') }}" ></script>
 {{--<link rel="stylesheet" href="http://fonts.useso.com/css?family=Lato:100,300,400,700">--}}
 
 <!-- Styles -->

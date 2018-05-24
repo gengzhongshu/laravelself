@@ -78,7 +78,7 @@
                 <div class="text-right">
                     @if(count($customer))
                         {{ $customer->links() }}
-                    @endif;
+                    @endif
                 </div><!--.btn-decision end-->
             </div><!--.widget end-->
         </div><!--.col-md-9 end-->
@@ -102,7 +102,7 @@ $('.delete').click(function(){
         }, success: function(data){
             if(data.status ==200){
                 layer.alert('删除成功');
-                location.href.reload();
+                window.location.reload();
 //                $('#customer'+$id).remove();
             }else{
                 layer.alert('删除失败');

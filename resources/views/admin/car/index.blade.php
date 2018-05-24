@@ -13,6 +13,18 @@
                 <div id="horizontal-form">
                     <form role="form" class="form-horizontal" method="get" action="">
                         <div class="form-group">
+                            <label class="col-sm-1 control-label no-padding-right wid-auto distance-padding-left_0">姓名</label>
+                            <div class="col-sm-2">
+                                <select id="customerId" style="width:100%;">
+                                    @if(count($customer))
+                                    @foreach ($customer as $val)
+                                       <option value="{{isset($val['id'])?$val['id']:''}}" @if($val['id'] == @$params['customer_id']) selected @endif>{{isset($val['name'])?$val['name']:''}}</option>
+                                    @endforeach
+                                    @else
+                                        <option>请添加用户</option>
+                                    @endif
+                                </select>
+                            </div>
                             <label class="col-sm-1 control-label no-padding-right wid-auto distance-padding-left_0">车辆名称</label>
                             <div class="col-sm-2">
                                 <input placeholder="按名称" class="form-control" name="car_name" type="text" value="{{ @$params['car_name'] }}">
@@ -40,23 +52,31 @@
                                 名称
                             </th>
                             <th class="" rowspan="1" colspan="1">
-                                电话
+                                拍照
                             </th>
                             <th class="" rowspan="1" colspan="1">
+                                排量
+                            </th>
+                            <th class=""  style="width:100px">
+                                名称
+                            </th>
+                            <th >
                                 创建时间
                             </th>
-                            <th class="" rowspan="1" colspan="1" style="width:100px">
+                             <th class="" rowspan="1" colspan="1" style="width:100px">
                                 操作
                             </th>
                         </tr>
                         </thead>
                         <tbody>
-                        @if(count($customer))
-                            @foreach ($customer as $val)
+                        @if(count($car))
+                            @foreach ($car as $val)
                                 <tr id="customer{{$val->id}}" >
                                     <td>{{$val->id}}</td>
-                                    <td colspan="1">{{$val->name}}</td>
-                                    <td>{{$val->phone}}</td>
+                                    <td colspan="1">{{$val->car_name}}</td>
+                                    <td>{{$val->paizhao}}</td>
+                                    <td>{{ $val->pailiang}}</td>
+                                    <td>{{ $val->customername}}</td>
                                     <td>{{ $val->created_at}}</td>
                                     <td>
                                         <a class=" edit popup-edit" style="width: 20px;" href="/admin/add?id={{$val->id}}" title="添加车辆信息"><i class="iconfont icon-add"></i></a>
@@ -76,15 +96,22 @@
                 </div><!--.widget-body end-->
                 <!--分页-->
                 <div class="text-right">
-                    @if(count($customer))
-                        {{ $customer->links() }}
-                    @endif;
+                    {{--@if(count($customer))--}}
+                        {{--{{ $customer->links() }}--}}
+                    {{--@endif;--}}
                 </div><!--.btn-decision end-->
             </div><!--.widget end-->
         </div><!--.col-md-9 end-->
     </div><!--.row end-->
 </div>
 <script>
+$('#customerId').select2({
+        language: {
+             noResults: function (params) {
+             return "暂无数据";
+         }
+         }
+})
 $('.delete').click(function(){
     $id  = $(this).data('id');
     // ajax 删除
